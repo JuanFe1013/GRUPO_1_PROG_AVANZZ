@@ -62,3 +62,102 @@ personas.forEach((item, index) =>  {
 
 });
 
+let m ='12'
+if(m === 12){
+    console.log(m, 'ok')
+}else if(m <= 12){
+    console.log(m, 'menos 1')
+}else{
+    console.log(m, 'not')
+}
+/**
+// !negacion 
+//== igual del valor 
+//=== igual valor y tipo 
+//!= diferente
+//<
+//>
+//<=
+//>==
+//&& es el and
+// || or
+*/
+
+let categoria = 'a';
+switch(categoria){
+    case 'a':
+        console.log('Categoria A');
+        break;
+        case 'b':
+            console.log('Categoria A');
+            break;
+            case 'c':
+        console.log('Categoria A');
+        break;
+        default:
+            console.log('Sin Definir');
+            break;
+}
+
+function sumar(a, b){
+    return a + b;
+
+}
+function esMAyorEdad (edad){
+    if(edad<18){
+        return 'Es menor de edad';
+    }else{
+        return 'es mayor de edad'
+    }
+}
+
+let resultado = sumar(2, 5);
+function realizarSuma(a, b){
+    console.log(a + b);
+}
+realizarSuma(2, 6);
+
+// const sumar2 = function (a, b){
+//    return a + b:
+//}
+const sumar2 = (a, b) => {
+    return a + b;
+}
+console.log(sumar2(5,9));
+
+class Estudiante{
+    nombre = '';
+    edad = 0;
+    email = '';
+    codigo = '';
+    
+    constructor(nombre, edad, email, codigo){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.email = email;
+        this.codigo = codigo;
+    }
+
+    esMayorEdad(){
+       // if(this.edad < 18){
+        //    return 'Es menor de edad';
+        //}else{
+           // return 'es mayor de edad'
+        //}
+        return this.edad < 18   
+        ? 'Es menor de edad'
+        : 'Es mayor de edad';
+    }
+}
+
+const estudiante = new Estudiante('Pepe', 17, 'tests@test.com', '12345');
+console.log(estudiante.nombre, estudiante.esMayorEdad());
+
+class EstudianteSistemas extends Estudiante{
+    constructor(codigo){
+        super('Ana', 28, 'tests@test.com', codigo);
+    }
+}
+
+const sistemas = new EstudianteSistemas('654321');
+console.log(sistemas.nombre, sistemas.esMayorEdad(), sistemas.codigo);
